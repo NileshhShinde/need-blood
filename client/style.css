@@ -104,3 +104,74 @@ nav a {
     text-decoration: none;
     font-size: 18px;
 }
+
+.blood-groups {
+    width: 80%;
+    margin: 80px auto;
+    text-align: center;
+}
+
+.blood-groups h2 {
+    margin-bottom: 40px;
+    font-size: 35px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #c1121f;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+footer {
+    background: #c1121f;
+    color: white;
+    text-align: center;
+    padding: 40px;
+    margin-top: 100px;
+}
+
+footer h3 {
+    margin-bottom: 15px;
+    font-size: 30px;
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+.copyright {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+@media(max-width:768px) {
+    nav {
+        flex-direction: column;
+        gap: 20px;
+    }
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .hero h2 {
+        font-size: 28px;
+    }
+}
