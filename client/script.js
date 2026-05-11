@@ -1,4 +1,3 @@
-donorForm.addEventListener("submit", async(e) => {
 document.addEventListener('DOMContentLoaded', () => {
   const sections = document.querySelectorAll('.page-section');
   const showSection = (id) => {
@@ -45,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // donor form submit handling (if present)
-const donorForm = document.querySelector("form.donor-form");
+const donorForm = document.querySelector("#donor-section form");
 if (donorForm) {
   donorForm.addEventListener("submit", async (e) => {
     e.preventDefault();
