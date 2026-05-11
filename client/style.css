@@ -6,7 +6,7 @@
 }
 
 body {
-    background: #f8f9fa;
+    background: #e07272;
 }
 
 nav {
@@ -174,4 +174,138 @@ footer p {
     .hero h2 {
         font-size: 28px;
     }
+}
+
+/* Donation gallery styles (moved from index.html) */
+.donation-gallery {
+    width: 80%;
+    margin: 40px auto;
+}
+
+.donation-gallery h2 {
+    text-align: center;
+    margin-bottom: 8px;
+    font-size: 32px;
+}
+
+.donation-gallery .muted {
+    text-align: center;
+    color: #666;
+    margin-bottom: 16px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.gallery-grid figure {
+    background: white;
+    padding: 8px;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-grid img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+@media(max-width:768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .donation-gallery {
+        width: 90%;
+    }
+}
+
+/* Hover / zoom effects for gallery images */
+.gallery-grid figure {
+    transition: transform 0.28s cubic-bezier(.2,.9,.2,1), box-shadow 0.28s ease;
+    cursor: pointer;
+}
+
+.gallery-grid figure:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+}
+
+.gallery-grid img {
+    transition: transform 0.28s cubic-bezier(.2,.9,.2,1);
+}
+
+.gallery-grid figure:hover img {
+    transform: scale(1.05);
+}
+
+/* Header + logo styles */
+.site-header {
+    background: #c1121f;
+    color: white;
+    padding: 14px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    background: white;
+    color: #c1121f;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+}
+
+.site-title {
+    margin: 0;
+    font-size: 24px;
+    color: white;
+}
+
+.header-nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Hidden utility used to hide gallery until About is clicked */
+.hidden {
+    display: none !important;
+}
+
+@media(max-width:768px) {
+    .site-header {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+    }
+}
+ 
+
+
+.header{
+    background: #c1121f;
+    color: white;
+    text-align: center;
+    padding: 40px;
+    margin-top: 100px;
 }
