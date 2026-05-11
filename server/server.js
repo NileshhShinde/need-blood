@@ -1,17 +1,48 @@
+require("dotenv").config();
+
 const express = require("express");
+const mongoose = require("mongoose");
 const cors = require("cors");
+
+const Donor = require("./models/Donor");
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
+mongoose.connect(process.env.MONGO_URI)
+    .then(() => console.log("MongoDB Connected"))
+    .catch((err) => console.log(err));
+
 app.get("/", (req, res) => {
-    res.send("Need Blood Backend Running");
+    res.send("API Running");
 });
 
-const PORT = 5000;
+app.post("/donor", async(req, res) => {
 
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+    try {
+
+        const donor = new Donor(req.body);
+
+        await donor.save();
+
+        res.json({
+            message: "Donor Registered Successfully"
+        });
+
+    } catch (error) {
+
+        console.log(error);
+
+        res.status(500).json({
+            message: "Server Error"
+        });
+
+    }
+
+});
+
+app.listen(5000, () => {
+    console.log("Server running on port 5000");
 });

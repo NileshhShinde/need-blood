@@ -54,8 +54,14 @@ body {
 
 /* Home hero (scoped to #home-section) */
 #home-section {
-  background: url('https://static.vecteezy.com/system/resources/thumbnails/019/038/947/small/people-donate-blood-to-charity-vector.jpg') center/cover no-repeat fixed;
-  background-size: cover;
+  /* prefer a local hero image if present, otherwise use the remote fallback */
+  background-image: url('hero-bg.jpg'), url('https://static.vecteezy.com/system/resources/thumbnails/019/038/947/small/people-donate-blood-to-charity-vector.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover, cover;
+  background-attachment: scroll;
+  min-height: 70vh;
+  background-color: #f9e9ea; /* subtle fallback tint */
 }
 
 #home-section .hero {
