@@ -10,7 +10,7 @@
     <header class="site-header">
         <div style="display:flex;align-items:center;gap:12px;">
             <div class="logo">🩸</div>
-            <h1 class="site-title">BloodNet</h1>
+            <h1 class="site-title">Need Blood</h1>
         </div>
         <section>
             
@@ -18,8 +18,8 @@
         <nav class="header-nav">
             <ul>
                 <li><a href="#" id="home-link">Home</a></li>
-                <li><a href="#" id="find-link">Find Donor</a></li>
-                <li><a href="#" id="about-link">About</a></li>
+                <li><a href="#" id="find-link">Donate blood</a></li>
+                <li><a href="#" id="find-link">Request Blood</a></li>
                 <li><a href="#" id="contact-link">Contact</a></li>
             </ul>
         </nav>
@@ -89,19 +89,21 @@
         </form>
 
     </section>
-    
 
-    <section id="request-section" class="request-section page-section">
+
+    <section id="donor-section" class="donor-form">
 
         <h2>Emergency Blood Request</h2>
 
         <form>
 
-            <input type="text" placeholder="Patient Name">
+            <input type="text" placeholder="Full Name" id="name">
 
-            <select>
-      <option>Required Blood Group</option>
-      <option>A+</option> 
+            <input type="tel" placeholder="Phone Number" id="phone">
+
+            <select id="bloodGroup">
+      <option>Select Blood Group</option>
+      <option>A+</option>
       <option>A-</option>
       <option>B+</option>
       <option>B-</option>
@@ -111,40 +113,26 @@
       <option>AB-</option>
     </select>
 
-            <input type="text" placeholder="Hospital Name">
+     <select id="hospital">
+      <option>nearest hospital</option>
+      <option>waluj hospital</option>
+      <option>MGM</option>
+      <option>Gov.</option>
+      <option>Bajaj</option>
+      <option>Dhoot</option>
+      <option>Sigma</option>
+      <option>Mediplus</option>
+      <option>sycet ayurvedic</option>
+    </select>
 
-            <input type="text" placeholder="Location">
+            
 
-            <button type="submit">Send Emergency Request</button>
+            <button type="submit">Request Blood</button>
 
         </form>
 
     </section>
 
-
-    <section id="blood-section" class="blood-groups page-section">
-
-        <h2>Available Blood Groups</h2>
-
-        <div class="cards">
-
-            <div class="card"><span class="label">A+</span></div>
-            <div class="card"><span class="label">B+</span></div>
-            <div class="card"><span class="label">O+</span></div>
-            <div class="card"><span class="label">AB+</span></div>
-            <div class="card"><span class="label">A-</span></div>
-            <div class="card"><span class="label">B-</span></div>
-            <div class="card"><span class="label">O-</span></div>
-            <div class="card"><span class="label">AB-</span></div>
-
-        </div>
-
-    </section>
-
-    <section id="contact-section" class="page-section contact-section">
-        <h2>Contact</h2>
-        <p>For urgent requests call: <a href="tel:7066309714">7066309714</a></p>
-    </section>
 
 
     <footer>
