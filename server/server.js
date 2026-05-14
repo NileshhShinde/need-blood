@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 
 const Donor = require("./models/Donor");
+const Request = require("./models/Request");
 
 const app = express();
 
@@ -12,8 +13,12 @@ app.use(cors());
 app.use(express.json());
 
 mongoose.connect(process.env.MONGO_URI)
-    .then(() => console.log("MongoDB Connected"))
-    .catch((err) => console.log(err));
+    .then(() => {
+        console.log("MongoDB Connected");
+    })
+    .catch((err) => {
+        console.log(err);
+    });
 
 app.get("/", (req, res) => {
     res.send("API Running");
@@ -43,6 +48,50 @@ app.post("/donor", async(req, res) => {
 
 });
 
+
+app.post("/request", async(req, res) => {
+
+    try {
+
+        const request = new Request(req.body);
+
+        await request.save();
+
+        res.json({
+            message: "Emergency Request Submitted"
+        });
+
+    } catch (error) {
+
+        console.log(error);
+
+        res.status(500).json({
+            message: "Server Error"
+        });
+
+    }
+
+});
+
+app.get("/donors", async(req, res) => {
+
+    try {
+
+        const donors = await Donor.find();
+
+        res.json(donors);
+
+    } catch (error) {
+
+        console.log(error);
+
+        res.status(500).json({
+            message: "Server Error"
+        });
+
+    }
+
+});
 app.listen(5000, () => {
     console.log("Server running on port 5000");
 });

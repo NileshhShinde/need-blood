@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Need Blood</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header class="site-header">
         <div style="display:flex;align-items:center;gap:12px;">
             <div class="logo">https://static.vecteezy.com/system/resources/thumbnails/019/152/949/small/hand-holding-a-drop-of-blood-world-blood-donor-day-blood-donation-illustration-donor-symbol-blood-donation-symbol-free-png.png</div>
             <h1 class="site-title">Need Blood</h1>
-            
+
         </div>
         <section>
-            
+
         </section>
         <nav class="header-nav">
             <ul>
@@ -61,7 +63,7 @@
         </div>
     </section>
 
-    <section id="donor-section" class="donor-form">
+    <section class="donor-form">
 
         <h2>Become a Blood Donor</h2>
 
@@ -90,20 +92,24 @@
         </form>
 
     </section>
+    <section class="donor-list">
 
+        <h2>Available Donors</h2>
 
-    <section id="donor-section" class="donor-form">
+        <div id="donorContainer"></div>
+
+    </section>
+
+    <section class="request-form">
 
         <h2>Emergency Blood Request</h2>
 
         <form>
 
-            <input type="text" placeholder="Full Name" id="name">
+            <input type="text" placeholder="Patient Name" id="patientName">
 
-            <input type="tel" placeholder="Phone Number" id="phone">
-
-            <select id="bloodGroup">
-      <option>Select Blood Group</option>
+            <select id="requestBloodGroup">
+      <option>Required Blood Group</option>
       <option>A+</option>
       <option>A-</option>
       <option>B+</option>
@@ -114,26 +120,48 @@
       <option>AB-</option>
     </select>
 
-     <select id="hospital">
-      <option>nearest hospital</option>
-      <option>waluj hospital</option>
-      <option>MGM</option>
-      <option>Gov.</option>
-      <option>Bajaj</option>
-      <option>Dhoot</option>
-      <option>Sigma</option>
-      <option>Mediplus</option>
-      <option>sycet ayurvedic</option>
-    </select>
+            <input type="text" placeholder="Hospital Name" id="hospital">
 
-            
+            <input type="text" placeholder="Location" id="requestLocation">
+            <input type="tel" placeholder="Contact Number" id="contact">
 
-            <button type="submit">Request Blood</button>
+            <button type="submit">Send Emergency Request</button>
 
         </form>
 
     </section>
 
+    <nav>
+
+        <h1>🩸 Need Blood</h1>
+
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Donors</a></li>
+            <li><a href="#">Emergency</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+
+    </nav>
+
+    <section class="blood-groups">
+
+        <h2>Available Blood Groups</h2>
+
+        <div class="cards">
+
+            <div class="card">A+</div>
+            <div class="card">B+</div>
+            <div class="card">O+</div>
+            <div class="card">AB+</div>
+            <div class="card">A-</div>
+            <div class="card">B-</div>
+            <div class="card">O-</div>
+            <div class="card">AB-</div>
+
+        </div>
+
+    </section>
 
 
     <footer>
@@ -151,7 +179,7 @@
     </footer>
 
     <!-- Donation Gallery -->
-    <section class="donation-gallery">
+    <section class="donation-gallery">https
         <h2>Blood Donation Moments</h2>
         <p class="muted">Real donors. Real lives saved.</p>
         <div class="gallery-grid">
@@ -175,7 +203,6 @@
             </figure>
         </div>
     </section>
-    
 
 
 
@@ -294,6 +321,7 @@
             color: rgba(255, 255, 255, 0.85)
         }
     </style>
+
     <script>
         (function() {
             const toggle = document.getElementById('theme-toggle');
@@ -302,13 +330,11 @@
             const updateLabel = () => {
                 toggle.textContent = document.documentElement.classList.contains('dark') ? 'Light' : 'Dark';
             };
-            if (toggle) {
-                toggle.addEventListener('click', () => {
-                    const isDark = document.documentElement.classList.toggle('dark');
-                    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-                    updateLabel();
-                });
-            }
+            toggle ? .addEventListener('click', () => {
+                const isDark = document.documentElement.classList.toggle('dark');
+                localStorage.setItem('theme', isDark ? 'dark' : 'light');
+                updateLabel();
+            });
             updateLabel();
         })();
     </script>
