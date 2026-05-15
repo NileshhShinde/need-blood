@@ -12,9 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // nav link handlers
     const map = {
         'home-link': 'home-section',
-        'find-link': 'donor-section',
-        'contact-link': 'contact-section',
-        'about-link': 'home-section'
+        'donate-link': 'donor-section',
+        'request-link': 'emergency-request',
+        'contact-link': 'contact-section'
     };
 
     Object.keys(map).forEach(linkId => {
@@ -24,23 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
             ev.preventDefault();
             showSection(map[linkId]);
         });
-    });
-
-  // nav link handlers
-  const map = {
-    'home-link': 'home-section',
-    'donate-link': 'donor-section',
-    'request-link': 'emergency-request',
-    'contact-link': 'contact-section',
-    'about-link': 'home-section'
-  };
-
-  Object.keys(map).forEach(linkId => {
-    const el = document.getElementById(linkId);
-    if (!el) return;
-    el.addEventListener('click', (ev) => {
-      ev.preventDefault();
-      showSection(map[linkId]);
     });
 
     // show home on first load
@@ -83,25 +66,19 @@ if (donorForm) {
     });
 }
 
-const requestForm = document.querySelector(".request-form form");
+const requestForm = document.querySelector("#emergency-request form");
 
-requestForm.addEventListener("submit", async(e) => {
+if (requestForm) {
+    requestForm.addEventListener("submit", async(e) => {
+        e.preventDefault();
 
-    e.preventDefault();
-
-    const requestData = {
-
-        patientName: document.getElementById("patientName").value,
-
-        bloodGroup: document.getElementById("requestBloodGroup").value,
-
-        hospital: document.getElementById("hospital").value,
-
-        location: document.getElementById("requestLocation").value,
-
-        contact: document.getElementById("contact").value
-
-    };
+        const requestData = {
+            patientName: document.getElementById("patientName").value,
+            bloodGroup: document.getElementById("requestBloodGroup").value,
+            hospital: document.getElementById("hospital").value,
+            location: document.getElementById("requestLocation").value,
+            contact: document.getElementById("contact").value
+        };
 
     try {
 
@@ -123,12 +100,10 @@ requestForm.addEventListener("submit", async(e) => {
         loadDonors();
 
     } catch (error) {
-
         console.log(error);
-
     }
-
 });
+}
 
 async function loadDonors() {
 
@@ -139,25 +114,19 @@ async function loadDonors() {
         const donors = await response.json();
 
         const donorContainer = document.getElementById("donorContainer");
+        if (!donorContainer) return;
 
         donorContainer.innerHTML = "";
 
         donors.forEach((donor) => {
 
             donorContainer.innerHTML += `
-
                 <div class="donor-card">
-
                     <h3>${donor.name}</h3>
-
                     <p>Blood Group: ${donor.bloodGroup}</p>
-
                     <p>Location: ${donor.location}</p>
-
                     <p>Phone: ${donor.phone}</p>
-
                 </div>
-
             `;
 
         });
