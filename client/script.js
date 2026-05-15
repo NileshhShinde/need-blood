@@ -11,7 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // nav link handlers
   const map = {
     'home-link': 'home-section',
-    'find-link': 'donor-section',
+    'donate-link': 'donor-section',
+    'request-link': 'emergency-request',
     'contact-link': 'contact-section',
     'about-link': 'home-section'
   };
