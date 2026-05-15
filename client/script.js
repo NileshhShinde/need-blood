@@ -26,7 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-<<<<<<< HEAD
   // nav link handlers
   const map = {
     'home-link': 'home-section',
@@ -42,13 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
     el.addEventListener('click', (ev) => {
       ev.preventDefault();
       showSection(map[linkId]);
-=======
-    // hero CTA opens registration (donor) page and scrolls into view
-    const cta = document.getElementById('donate-cta');
-    if (cta) cta.addEventListener('click', (ev) => {
-        ev.preventDefault();
-        showSection('donor-section');
->>>>>>> 50b2480a93296af189e7642a9548dfb1dc313ff0
     });
 
     // show home on first load

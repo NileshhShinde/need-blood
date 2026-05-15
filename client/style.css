@@ -37,7 +37,6 @@ body {
 }
 
 .logo {
-<<<<<<< HEAD
   background: white;
   color: #c1121f;
   width: 48px;
@@ -54,7 +53,6 @@ body {
   margin: 0;
   font-size: 24px;
   font-weight: bold;
-=======
     background: white;
     color: #c1121f;
     width: 48px;
@@ -64,7 +62,6 @@ body {
     align-items: center;
     justify-content: center;
     font-size: 22px;
->>>>>>> 50b2480a93296af189e7642a9548dfb1dc313ff0
 }
 
 .header-nav ul {
@@ -81,7 +78,6 @@ body {
     font-size: 18px;
 }
 
-<<<<<<< HEAD
 .site-title {
   font-family: 'Orbitron', sans-serif;
   font-size: 26px;
@@ -90,8 +86,6 @@ body {
   margin: 0;
   letter-spacing: 0.5px;
 }
-=======
->>>>>>> 50b2480a93296af189e7642a9548dfb1dc313ff0
 
 /* Home hero (scoped to #home-section) */
 
@@ -554,7 +548,6 @@ footer {
 }
 
 @media(max-width:768px) {
-<<<<<<< HEAD
   .slide { flex: 0 0 160px; }
   .slide img { height: 110px; }
 }
@@ -600,12 +593,3 @@ footer {
 }
 
 .logo-content{}
-=======
-    .slide {
-        flex: 0 0 160px;
-    }
-    .slide img {
-        height: 110px;
-    }
-}
->>>>>>> 50b2480a93296af189e7642a9548dfb1dc313ff0
